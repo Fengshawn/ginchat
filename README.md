@@ -1,2 +1,2 @@
-# ginchat
-Ginchat on AWS
+## ginchat
+implement a chat system with Gin
