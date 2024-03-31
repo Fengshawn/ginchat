@@ -17,11 +17,10 @@ func InitConfig() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println("config app:", viper.Get("app"))
-	fmt.Println("config mysql:", viper.Get("mysql"))
-
+	fmt.Println("config app inited...")
 }
 
 func InitMySQL() {
 	DB, _ = gorm.Open(mysql.Open(viper.GetString("mysql.dns")), &gorm.Config{})
+	fmt.Println("Mysql inited...")
 }
