@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"os"
@@ -59,4 +60,35 @@ func InitRedis() {
 		fmt.Println("Redis inited...")
 	}
 
+}
+
+const (
+	PublishKey = "websocket"
+)
+
+// Todo 之后改成kafka
+// 发布消息到Redis
+func Publish(ctx context.Context, channel string, payload string) error {
+	//老的redis版本的Publish方法可能会用到 ctx, 高版本的只用channel和msg
+	var err error
+	fmt.Println("Publish>>>>>>>>>>", payload)
+	err = Red.Publish(channel, payload).Err()
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+	return err
+}
+
+func Subscribe(ctx context.Context, channel string) (string, error) {
+	//老的redis版本的PSubscribe方法可能会用到 ctx, 高版本的只用channel和msg
+	sub := Red.Subscribe(channel)
+	fmt.Println("Subscribe ctx ...", ctx)
+	msg, err := sub.ReceiveMessage()
+	if err != nil {
+		fmt.Println(err)
+		return "", err
+	}
+	fmt.Println("Subscribe ...", msg.Payload)
+	return msg.Payload, err
 }
