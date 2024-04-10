@@ -1,2 +1,4 @@
 ## ginchat
-implement a chat system with Gin
+implement a toy local chat system with Gin
+target to one-click deployment
+just for fun
