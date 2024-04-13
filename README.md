@@ -1,4 +1,3 @@
 ## ginchat
-implement a toy local chat system with Gin
-target to one-click deployment
+implement a local chat server with React+Vue+Gin+gorm
 just for fun
