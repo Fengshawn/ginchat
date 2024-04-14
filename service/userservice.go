@@ -38,12 +38,21 @@ func GetUserList(c *gin.Context) {
 // @Router /user/createUser [get]
 func CreateUser(c *gin.Context) {
 	user := models.UserBasic{}
-	user.Name = c.Query("name")
-	password := c.Query("password")
-	repassword := c.Query("repassword")
+	user.Name = c.Request.FormValue("name")
+	password := c.Request.FormValue("password")
+	repassword := c.Request.FormValue("Identity")
 
+	fmt.Println(password, repassword)
 	salt := fmt.Sprintf("%06d", rand.Int31())
 
+	if user.Name == "" || password == "" || repassword == "" {
+		c.JSON(-1, gin.H{
+			"code":    -1, // 0成功, -1失败
+			"message": "用户名或密码不能为空!",
+			"data":    user,
+		})
+		return
+	}
 	data := models.FindUserByName(user.Name)
 	if data.Name != "" {
 		c.JSON(-1, gin.H{
@@ -102,8 +111,8 @@ func DeleteUser(c *gin.Context) {
 // @Router /user/findUserByNameAndPwd [post]
 func FindUserByNameAndPwd(c *gin.Context) {
 	data := models.UserBasic{}
-	name := c.Query("name")
-	password := c.Query("password")
+	name := c.Request.FormValue("name")
+	password := c.Request.FormValue("password")
 	user := models.FindUserByName(name)
 	if user.Name == "" {
 		c.JSON(200, gin.H{
