@@ -1,7 +1,6 @@
 package service
 
 import (
-	"fmt"
 	"ginchat/models"
 	"html/template"
 	"strconv"
@@ -56,7 +55,6 @@ func ToChat(c *gin.Context) {
 	user := models.UserBasic{}
 	user.ID = uint(userId)
 	user.Identity = token
-	fmt.Println("!!!!!!!!", user)
 	ind.Execute(c.Writer, user)
 	// c.JSON(200, gin.H{
 	// 	"message": "welcome",
