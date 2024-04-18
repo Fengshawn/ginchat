@@ -231,3 +231,15 @@ func SearchFriends(c *gin.Context) {
 	})
 
 }
+
+func SearchGroups(c *gin.Context) {
+	id, _ := strconv.Atoi(c.Request.FormValue("userId"))
+	groups := models.SearchGroup(uint(id))
+	c.JSON(200, gin.H{
+		"code":    0, // 0成功, -1失败
+		"message": "查询群列表成功!",
+		"data":    nil,
+		"Rows":    groups,
+	})
+
+}
