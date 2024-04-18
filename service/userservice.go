@@ -226,7 +226,8 @@ func SearchFriends(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"code":    0, // 0成功, -1失败
 		"message": "查询好友列表成功!",
-		"data":    users,
+		"data":    nil,
+		"Rows":    users,
 	})
 
 }
