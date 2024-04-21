@@ -20,6 +20,10 @@ Implement a local chat server with Vue+Gin+gorm based on open-sorce IM app
    ```sh
    docker-compose up -d
    ```
+   
+## Architecture
+
+### Technology Architecture
 
 ### API Introduce
 
