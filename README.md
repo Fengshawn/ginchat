@@ -41,6 +41,7 @@ Implement a local chat server with Vue+Gin+gorm based on open-sorce IM app
 | /user/updateUser                | 更新用户信息 | 写    |              |            	   |
 | /user/sendMsg                   | 发送消息     | 写    |              |            	   |
 | /user/sendUserMsg               | 发送用户消息  | 写    |              |            	   |
+| /user/userMsg               | 聊天记录  | 读    |              |            	   |
 
  
 TODO
