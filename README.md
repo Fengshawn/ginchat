@@ -1,20 +1,9 @@
 ## gochat
 Implement a local chat server with Vue+Gin+gorm based on open-sorce IM app
 
-## Quick Start (doing)
+## Quick Start
 
-1. Deploy dependencies
-   Deploy some dependencies such as MySQL, Redis etc. Run them by using `docker-compose` with `.yml` files in `./deploy` or deploy them by yourself.
-
-   ```sh
-   docker-compose -f ./deploy/env.yml up -d
-   ```
-
-2. Update config files
-
-   There's an elegant way to run applications in this repo which is using `docker-compose`. So update config files in `./config_docker_compose` if you use `docker-comopse`. If you don't want to run them in this way, you must update config files in `./config` for ensuring them working.
-
-3. Run applications by using `docker-compose`
+Run applications by using `docker-compose`
    Everything is ready now, ensure that there's a `docker-compose.yml` in the root directory and run this command in terminal
 
    ```sh
