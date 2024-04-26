@@ -25,8 +25,9 @@ func InitConfig() {
 	err := viper.ReadInConfig()
 	if err != nil {
 		fmt.Println(err)
+	} else {
+		fmt.Println("config app inited...")
 	}
-	fmt.Println("config app inited...")
 }
 
 func InitMySQL() {
@@ -39,9 +40,14 @@ func InitMySQL() {
 		},
 	)
 
-	DB, _ = gorm.Open(mysql.Open(viper.GetString("mysql.dns")),
+	DB, err := gorm.Open(mysql.Open(viper.GetString("mysql.dns")),
 		&gorm.Config{Logger: newLogger})
-	fmt.Println("Mysql inited...")
+	if err != nil {
+		fmt.Println("init MySQL error ...", err)
+	} else {
+		fmt.Println("Mysql inited...", DB)
+	}
+
 }
 
 func InitRedis() {
