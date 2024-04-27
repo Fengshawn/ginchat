@@ -11,11 +11,9 @@ services:
     image: "mysql:latest"  # 使用官方的MySQL镜像
     healthcheck:
       test: "mysqladmin ping -h localhost -u my -pyourpassword"
-      interval: 5s
       timeout: 5s
       retries: 10
-    command: 
-      --default-authentication-plugin=mysql_native_password
+    command:
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_general_ci
       --explicit_defaults_for_timestamp=true

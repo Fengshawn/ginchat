@@ -40,14 +40,12 @@ func InitMySQL() {
 		},
 	)
 
-	DB, err := gorm.Open(mysql.Open(viper.GetString("mysql.dns")),
+	DB, _ = gorm.Open(mysql.Open(viper.GetString("mysql.dns")),
 		&gorm.Config{Logger: newLogger})
-	if err != nil {
-		fmt.Println("init MySQL error ...", err)
-	} else {
-		fmt.Println("Mysql inited...", DB)
-	}
-
+	fmt.Println(" MySQL inited 。。。。")
+	//user := models.UserBasic{}
+	//DB.Find(&user)
+	//fmt.Println(user)
 }
 
 func InitRedis() {

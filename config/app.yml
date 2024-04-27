@@ -1,5 +1,6 @@
 mysql:
   dns: "my:yourpassword@tcp(db:3308)/ginchat?charset=utf8mb4&parseTime=True&loc=Local"
+  
 
 redis:
   addr: "redis:6379"
