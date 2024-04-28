@@ -3,7 +3,7 @@ Implement a local chat server with Vue+Gin+gorm based on open-sorce IM app
 
 ## Quick Start
 
-Run applications by using `docker-compose`
+Git pull and Run applications by using `docker-compose`
    Everything is ready now, ensure that there's a `docker-compose.yml` in the root directory and run this command in terminal
 
    ```sh
@@ -22,6 +22,7 @@ Run applications by using `docker-compose`
 | /toRegister          		  | 注册页面     | 写    |              |                    |
 | /toChat             		  | 进入聊天     | 读    | 根本功能接口  |                    |
 | /searchFriends                  | 用户好友列表 |读      |              |                    |
+| contact/addfriend                  | 添加好友 |写      |              |                    |
 | /searchGroups                   | 用户群聊列表 | 读    |             |            	   |
 | /user/getUserList               | 用户列表     | 读    |              |            	   |
 | /user/createUser                | 创建用户     | 写    |             |            	   |
@@ -34,7 +35,6 @@ Run applications by using `docker-compose`
 
  
 TODO
-1. Support sound and video storage and communication
-2. Easy deployment CI/CD
-3. Add chatbot user with Grok/LLaMA
-4. Scalability with K8s
+Support sound and video storage and communication
+Add chatbot user with LLaMA3
+Scalability with K8s
