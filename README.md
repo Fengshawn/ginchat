@@ -35,6 +35,6 @@ Git pull and Run applications by using `docker-compose`
 
  
 TODO
-Support sound and video storage and communication
-Add chatbot user with LLaMA3
-Scalability with K8s
+#Support sound and video storage and communication
+#Add chatbot user with LLaMA3
+#Scalability with K8s
