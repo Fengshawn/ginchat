@@ -38,4 +38,6 @@ TODO
 1. Support sound and video storage and communication
 2. Add chatbot user with LLaMA3
 3. Fine-tune LLAMA3
-4. Scalability with K8s
+4. Indexing SQL table
+5. Scalability with K8s
+   
