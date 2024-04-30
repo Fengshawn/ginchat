@@ -193,9 +193,9 @@ func sendMsg(userId int64, msg []byte) {
 
 // 获取缓存里面的消息
 func RedisMsg(userIdA int64, userIdB int64, start int64, end int64, isRev bool) []string {
-	rwLocker.RLock()
+	//rwLocker.RLock()
 	//node, ok := clientMap[userIdA]
-	rwLocker.RUnlock()
+	//rwLocker.RUnlock()
 	//jsonMsg := Message{}
 	//json.Unmarshal(msg, &jsonMsg)
 

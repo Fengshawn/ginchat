@@ -60,3 +60,7 @@ func ToChat(c *gin.Context) {
 	// 	"message": "welcome",
 	// })
 }
+
+func Chat(c *gin.Context) {
+	models.Chat(c.Writer, c.Request)
+}
